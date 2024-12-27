@@ -10,14 +10,14 @@ button.addEventListener('click', e => {
   e.preventDefault();
 
   const delay = parseInt(delayTime.value, 10) * 1000;
-  const selectedState = [...stateInput].find(radio => radio.checked)?.value;
+  const selectedState = [...stateInput].find(radio => radio.checked);
 
   const promise = new Promise((resolve, reject) => {
     setTimeout(() => {
       if (selectedState === 'fulfilled') {
-        resolve(`Fulfilled promise in ${delay}ms`);
+        resolve(`Fulfilled promise in ${delay} ms`);
       } else {
-        reject(`Rejected promise in ${delay}ms`);
+        reject(`Rejected promise in ${delay} ms`);
       }
     }, delay);
   });
